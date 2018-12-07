@@ -1,0 +1,18 @@
+platform: template
+sensors:
+  someone_just_arrived:
+    friendly_name: "Someone Just Arrived"
+    entity_id:
+      - input_select.jeff
+      - input_select.diana
+      - input_select.frankie
+      - input_select.manying
+      - input_select.stan
+      - input_select.elise
+    value_template: >-
+      {{ is_state('input_select.jeff', 'Just Arrived') or
+         is_state('input_select.diana', 'Just Arrived') or
+         is_state('input_select.frankie', 'Just Arrived') or
+         is_state('input_select.manying', 'Just Arrived') or
+         is_state('input_select.stan', 'Just Arrived') or
+         is_state('input_select.elise', 'Just Arrived') }}

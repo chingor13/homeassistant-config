@@ -1,0 +1,4 @@
+platform: mqtt
+name: Family Humidity
+state_topic: "smartthings/Family Multisensor/humidity/state"
+device_class: humidity

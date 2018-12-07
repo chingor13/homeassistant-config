@@ -1,0 +1,243 @@
+- id: letsencrypt-renewal
+  alias: "Let's Encrypt Renewal"
+  trigger:
+  - platform: time
+    at: '00:00:00'
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: core_letsencrypt
+
+- id: sunset-porchlight
+  alias: "Turn on front door light at sunset"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:45:00"
+  action:
+    service: switch.turn_on
+    entity_id: switch.front_door_switch
+
+- id: midnight-lights-off
+  alias: "Turn off outdoor lights at midnight"
+  trigger:
+    platform: time
+    at: '00:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.front_door_switch
+
+- id: alarm-triggered-notifications
+  alias: "Send notifications when alarm triggered"
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: "triggered"
+  condition:
+    - condition: state
+      entity_id: binary_sensor.someone_just_arrived
+      state: "off"
+  action:
+    - service: notify.jeffs_phone
+      data:
+        message: "Alarm has been triggered!"
+
+# - id: rescan-when-alarm-pending
+#   alias: "Rescan local devices when alarm goes to pending"
+#   trigger:
+#     - platform: state
+#       entity_id: alarm_control_panel.home_alarm
+#       to: "pending"
+#   action:
+#     - service: script.turn_on
+#       entity_id: script.rescan_nmap
+
+- id: disarm-when-someone-returns
+  alias: "Disarm the alarm when someone returns"
+  trigger:
+    - platform: state
+      entity_id: group.presence
+      to: "on"
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.home_alarm
+      data:
+        code: !secret alarm_code
+
+- id: trigger-alarm-away
+  alias: "Trigger alarm when away and anything happens"
+  trigger:
+    - platform: state
+      entity_id: group.security_away
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: "armed_away"
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_alarm
+
+- id: trigger-home-front-door
+  alias: Trigger front door when alarm_home
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.front_door
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: input_select.playroom_motion_recently
+      state: "No Motion"
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: "armed_home"
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_alarm
+
+- id: trigger-home-garage-door
+  alias: Trigger garage door when alarm_home
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_door
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: input_select.garage_entry_recently
+      state: "Closed"
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: "armed_home"
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_alarm
+
+- id: trigger-home-basement-door
+  alias: Trigger basement door when alarm_home
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.basement_door
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: input_select.downstairs_motion_recently
+      state: "No Motion"
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: "armed_home"
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_alarm
+
+- id: trigger-home-rest
+  alias: Trigger any other sensor when home
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_window
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.nook_window_1
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.nook_window_2
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.basement_lounge_right
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.basement_lounge_left
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.basement_kitchen_window
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.basement_bedroom_window
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: "armed_home"
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_alarm
+
+- id: alarm-away
+  alias: Alarm away when everyone is away
+  trigger:
+    - platform: state
+      entity_id: group.presence
+      to: "off"
+  action:
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.home_alarm
+      data:
+        code: !secret alarm_code
+
+- id: arm-home-when-someone-is-home
+  alias: Arm home when some is home
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.jeff
+      to: "on"
+      for:
+        minutes: 10
+    - platform: state
+      entity_id: binary_sensor.diana
+      to: "on"
+      for:
+        minutes: 10
+    - platform: state
+      entity_id: binary_sensor.manying
+      to: "on"
+      for:
+        minutes: 10
+    - platform: state
+      entity_id: binary_sensor.frankie
+      to: "on"
+      for:
+        minutes: 10
+    - platform: state
+      entity_id: binary_sensor.stan
+      to: "on"
+      for:
+        minutes: 10
+    - platform: state
+      entity_id: binary_sensor.elise
+      to: "on"
+      for:
+        minutes: 10
+  action:
+    - service: alarm_control_panel.alarm_arm_home
+      entity_id: alarm_control_panel.home_alarm
+      data:
+        code: !secret alarm_code
+
+- id: garage-entry-opened
+  alias: When garage entry opened
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_entry
+      to: "on"
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.garage_entry_recently
+      data:
+        option: "Recently Opened"
+
+- id: garage-entry-closed
+  alias: When garage entry closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_entry
+      to: "off"
+      for:
+        minutes: 1
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.garage_entry_recently
+      data:
+        option: "Closed"
+
+
+
+

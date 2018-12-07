@@ -1,0 +1,4 @@
+platform: mqtt
+name: Dining Illuminance
+state_topic: "smartthings/Dining Room Multisensor/illuminance/state"
+device_class: illuminance

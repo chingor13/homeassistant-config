@@ -1,0 +1,4 @@
+platform: ping
+name: google_ping
+host: 8.8.8.8
+scan_interval: 5

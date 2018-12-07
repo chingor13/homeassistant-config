@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Kitchen Island Switch"
+state_topic: "smartthings/Kitchen Island/switch/state"
+command_topic: "smartthings/Kitchen Island/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

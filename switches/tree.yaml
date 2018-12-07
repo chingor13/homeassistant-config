@@ -1,0 +1,8 @@
+# Z-Wave outlet
+platform: mqtt
+name: "Tree Outlet"
+state_topic: "smartthings/Tree/switch/state"
+command_topic: "smartthings/Tree/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

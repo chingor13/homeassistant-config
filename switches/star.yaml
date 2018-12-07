@@ -1,0 +1,8 @@
+# Z-Wave outlet
+platform: mqtt
+name: "Star Outlet"
+state_topic: "smartthings/Star/switch/state"
+command_topic: "smartthings/Star/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

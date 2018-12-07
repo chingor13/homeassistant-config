@@ -1,0 +1,78 @@
+jeff:
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+
+diana:
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+
+frankie:
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+
+manying:
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+
+stan:
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+
+elise:
+  options:
+    - Home
+    - Just Arrived
+    - Just Left
+    - Away
+    - Extended Away
+
+home_setting:
+  options:
+    - Home
+    - Away Day
+    - Night Mode
+
+dining_motion_recently:
+  options:
+    - No Motion
+    - Recent Motion
+
+family_motion_recently:
+  options:
+    - No Motion
+    - Recent Motion
+
+playroom_motion_recently:
+  options:
+    - No Motion
+    - Recent Motion
+
+downstairs_motion_recently:
+  options:
+    - No Motion
+    - Recent Motion
+
+garage_entry_recently:
+  options:
+    - Closed
+    - Recently Opened

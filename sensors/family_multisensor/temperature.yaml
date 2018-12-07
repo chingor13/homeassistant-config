@@ -1,0 +1,4 @@
+platform: mqtt
+name: Family Temperature
+state_topic: "smartthings/Family Multisensor/temperature/state"
+device_class: temperature

@@ -1,0 +1,4 @@
+platform: crimereports
+name: Crime Report
+# distance in meters
+radius: 2500

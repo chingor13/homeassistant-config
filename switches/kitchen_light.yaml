@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Kitchen Light Switch"
+state_topic: "smartthings/Kitchen Light/switch/state"
+command_topic: "smartthings/Kitchen Light/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

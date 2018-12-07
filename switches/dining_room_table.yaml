@@ -1,0 +1,8 @@
+# Z-Wave 
+platform: mqtt
+name: "Dining Room Table Switch"
+state_topic: "smartthings/Dining Room Table/switch/state"
+command_topic: "smartthings/Dining Room Table/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Middle Staircase Switch"
+state_topic: "smartthings/Middle Staircase/switch/state"
+command_topic: "smartthings/Middle Staircase/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

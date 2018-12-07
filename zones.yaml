@@ -1,0 +1,43 @@
+
+- name: Bartells Downtown
+  latitude: 47.609147
+  longitude: -122.336933
+  radius: 45
+  icon: mdi:needle
+
+- name: Bartells Tukwila
+  latitude: 47.475126
+  longitude: -122.284998
+  radius: 45
+  icon: mdi:needle
+
+- name: Google Seattle
+  latitude: 47.649391
+  longitude: -122.350811
+  radius: 250
+  icon: mdi:google
+
+- name: Google Kirkland
+  latitude: 47.669684
+  longitude: -122.197990
+  radius: 250
+  icon: mdi:google
+
+- name: Popo
+  latitude: 47.468501
+  longitude: -122.324704
+  radius: 15
+  icon: mdi:home-variant
+
+- name: Yeye
+  latitude: 47.674316
+  longitude: -122.305729
+  radius: 15
+  icon: mdi:home-variant
+
+# This will override the default home zone
+- name: Home
+  latitude: 47.451417
+  longitude: -122.272485
+  radius: 100
+  icon: mdi:home

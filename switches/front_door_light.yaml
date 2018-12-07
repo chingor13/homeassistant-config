@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Front Door Switch"
+state_topic: "smartthings/Front Door Light/switch/state"
+command_topic: "smartthings/Front Door Light/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

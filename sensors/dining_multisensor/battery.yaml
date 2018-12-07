@@ -1,0 +1,4 @@
+platform: mqtt
+name: Dining Multisensor Battery
+state_topic: "smartthings/Dining Room Multisensor/battery/state"
+device_class: battery

@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Upstairs Hallway Switch"
+state_topic: "smartthings/Upstairs Hallway/switch/state"
+command_topic: "smartthings/Upstairs Hallway/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

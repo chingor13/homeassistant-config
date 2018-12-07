@@ -1,0 +1,6 @@
+platform: mqtt
+name: Family Motion
+state_topic: "smartthings/Family Multisensor/motion/state"
+payload_on: "active"
+payload_off: "inactive"
+device_class: "motion"

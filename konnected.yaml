@@ -1,0 +1,62 @@
+access_token: !secret konnected_access_token
+devices:
+# Konnected 1
+- id: bcddc2fe0fc6
+  binary_sensors:
+    - pin: 1
+      type: window
+      name: Kitchen Window
+    - pin: 2
+      type: door
+      name: Garage Door
+    - pin: 5
+      type: window
+      name: Basement Lounge Left
+    - pin: 6
+      type: window
+      name: Basement Lounge Right
+    - pin: 7
+      type: window
+      name: Basement Kitchen Window
+    - pin: 9
+      type: window
+      name: Basement Bedroom Window
+# Konnected 2
+- id: bcddc2fdca92
+  binary_sensors:
+    - pin: 1
+      type: door
+      name: Basement Door
+    - pin: 2
+      type: window
+      name: Nook Window 1
+    - pin: 5
+      type: window
+      name: Nook Window 2
+    - pin: 6
+      type: window
+      name: Family Window 1
+    - pin: 7
+      type: window
+      name: Family Window 2
+    - pin: 9
+      type: door
+      name: Front Door
+# Konnected 3
+- id: bcddc2fda9a0
+  binary_sensors:
+    - pin: 1
+      type: window
+      name: Garage Window
+    - pin: 2
+      type: door
+      name: Garage Entry
+    - pin: 5
+      type: motion
+      name: Playroom Motion
+    - pin: 6
+      type: motion
+      name: Office Motion
+    - pin: 7
+      type: motion
+      name: Basement Motion

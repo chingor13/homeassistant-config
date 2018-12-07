@@ -1,0 +1,4 @@
+# Google WiFi router statistics
+platform: google_wifi
+host: 192.168.86.1
+name: google_wifi

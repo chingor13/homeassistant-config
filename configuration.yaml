@@ -1,0 +1,189 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Los_Angeles
+  # Customization file
+  customize: !include customize.yaml
+
+alarm_control_panel: !include_dir_list alarms
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  base_url: https://home.chingr.com
+  api_password: !secret http_api_password
+
+device_tracker: !include_dir_list device_trackers
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - harmony
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+blink:
+  username: !secret blink_username
+  password: !secret blink_password
+
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+
+# Enables support for tracking state changes over time
+history:
+
+ifttt:
+  key: !secret ifttt_key
+
+konnected: !include konnected.yaml
+          
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://192.168.86.49/axis-cgi/mjpg/video.cgi
+    still_image_url: http://192.168.86.49/cgi/jpg/image.cgi
+    name: Motorola MBP85CONNECT
+
+recorder:
+  purge_keep_days: 5
+  db_url: !secret recorder_database
+
+remote:
+  - platform: harmony
+    name: Theater
+    host: 192.168.86.29
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: https://home.chingr.com:3218
+  mqtt:
+    title: MQTT
+    icon: mdi:code-brackets
+    url: https://home.chingr.com:5713
+  nodered:
+    title: Node-RED
+    icon: mdi:sitemap
+    url: https://home.chingr.com:1880
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Binary Sensors
+binary_sensor: !include_dir_list binary_sensors
+
+# Sensors
+sensor: !include_dir_list sensors
+
+# Switches
+switch: !include_dir_list switches
+
+# Text to speech
+tts:
+  - platform: google
+
+# MQTT config
+mqtt:
+  broker: 192.168.86.61
+  port: 1883
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  client_id: ha
+  discovery: true
+  discovery_prefix: smartthings
+
+notify:
+  - platform: twilio_sms
+    name: Twilio SMS
+    from_number: +12062020922
+  - platform: html5
+    name: Jeff's Phone
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
+
+# Cloud
+#cloud:
+
+google_domains:
+  domain: home.chingr.com
+  username: !secret google_domains_username
+  password: !secret google_domains_password
+  timeout: 60
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: 1
+  platform: smart_life
+
+twilio:
+  account_sid: !secret twilio_account_sid
+  auth_token: !secret twilio_auth_token
+
+owntracks:
+    max_gps_accuracy: 200
+    waypoints: true
+    mqtt_topic: "owntracks/#"
+
+weather: 
+  - platform: darksky
+    api_key: !secret darksky_api_key
+
+# usps:
+#   username: !secret usps_username
+#   password: !secret usps_password
+
+logger:
+  default: info
+  logs:
+    #homeassistant.components.device_tracker: debug
+    locationsharinglib: debug
+
+influxdb:
+  host: 192.168.86.61
+  port: 8086
+  database: !secret influxdb_database
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
+
+zone: !include zones.yaml
+input_select: !include inputs.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Sitting Room Big Switch"
+state_topic: "smartthings/Sitting Room Big/switch/state"
+command_topic: "smartthings/Sitting Room Big/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

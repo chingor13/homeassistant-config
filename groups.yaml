@@ -1,0 +1,243 @@
+hassio:
+  name: Home Assistant
+  entities:
+    - sensor.current_version
+    - sensor.time_online
+
+utilites:
+  name: Utilities
+  entities:
+    - sensor.recycling_or_compost
+    - sensor.next_garbage_day
+    - sun.sun
+    - sensor.crime_report
+
+kitchen:
+  name: Kitchen
+  entities:
+    - binary_sensor.kitchen_window
+    - media_player.kitchen
+    - media_player.kitchen_display
+    - switch.kitchen_island_switch
+    - switch.kitchen_light_switch
+    - binary_sensor.dining_motion
+    - sensor.dining_temperature
+    - sensor.dining_humidity
+    - sensor.dining_illuminance
+    - sensor.dining_multisensor_battery
+
+office:
+  name: Office
+  entities:
+    - binary_sensor.office_motion
+    - media_player.office
+
+playroom:
+  name: Playroom
+  entities:
+    - media_player.playroom
+    - binary_sensor.playroom_motion
+    - binary_sensor.nook_window_1
+    - binary_sensor.nook_window_2
+
+living_room:
+  name: Living Room
+  entities:
+    - camera.motorola_mbp85connect
+    - binary_sensor.family_window_1
+    - binary_sensor.family_window_2
+    - switch.sitting_room_big_switch
+    - switch.sitting_room_small_switch
+    - switch.star_outlet
+    - switch.tree_outlet
+    - binary_sensor.family_motion
+    - sensor.family_temperature
+    - sensor.family_humidity
+    - sensor.family_illuminance
+    - sensor.family_multisensor_battery
+
+entryway:
+  name: Entryway
+  entities:
+    - binary_sensor.front_door
+    - switch.entryway_switch
+
+main_floor:
+  name: Main Floor
+  view: true
+  entities:
+    - group.kitchen
+    - group.office
+    - group.playroom
+    - group.living_room
+    - group.entryway
+    - group.garage
+    - switch.dining_room_switch
+    - switch.dining_room_table_switch
+
+garage:
+  name: Garage
+  entities:
+    - binary_sensor.garage_door
+    - binary_sensor.garage_entry
+    - binary_sensor.garage_window
+
+downstairs_kitchen:
+  name: Downstairs Kitchen
+  entities:
+    - binary_sensor.basement_kitchen_window
+    - media_player.downstairs_kitchen
+
+theater:
+  name: Theater
+  entities:
+    - media_player.theater_mini
+    - media_player.theater_speaker
+    - remote.theater
+    - binary_sensor.basement_bedroom_window
+  
+downstairs_living:
+  name: Downstairs Living
+  entities:
+    - media_player.downstairs_living_room
+    - media_player.downstairs_mini
+    - binary_sensor.basement_lounge_left
+    - binary_sensor.basement_lounge_right
+    - binary_sensor.basement_door
+    - binary_sensor.basement_motion
+
+downstairs:
+  name: Downstairs
+  view: true
+  entities:
+    - group.downstairs_kitchen
+    - group.theater
+    - group.downstairs_living
+
+master:
+  name: Master Suite
+  entities:
+    - media_player.master
+    - media_player.master_bathroom_speaker
+    - media_player.master_bedroom_display
+    - switch.12000222c3ae817ace0_1
+    - switch.12000222c3ae817ace0_2
+    - switch.12000222c3ae817ace0_3
+    - switch.12000222c3ae817ace0_4
+    - switch.12000222c3ae817ace0_5
+
+second_master:
+  name: Second Master
+  entities:
+    - media_player.second_master_mini
+    - media_player.second_master_speaker
+
+gift_room:
+  name: Gift Room
+  entities:
+    - media_player.gift_room_speaker
+    - media_player.gift_room_speaker_2
+    
+titans_room:
+  name: Titan's Room
+  entities:
+    - media_player.titans_room_speaker
+    - switch.12000222c3ae8197c13_1
+    - switch.12000222c3ae8197c13_2
+    - switch.12000222c3ae8197c13_3
+    - switch.12000222c3ae8197c13_4
+    - switch.12000222c3ae8197c13_5
+
+laundry_room:
+  name: Laundry Room
+  entities:
+    - media_player.laundry_room_speaker
+    - media_player.laundry_room_speaker_2
+
+upstairs:
+  name: Upstairs
+  view: true
+  entities:
+    - group.master
+    - group.second_master
+    - group.gift_room
+    - group.titans_room
+    - group.laundry_room
+
+presence:
+  name: Presence
+  entities:
+    - binary_sensor.diana
+    - binary_sensor.elise
+    - binary_sensor.frankie
+    - binary_sensor.jeff
+    - binary_sensor.manying
+    - binary_sensor.stan
+
+network:
+  name: Network
+  entities:
+    - sensor.google_wifi_current_version
+    - sensor.google_wifi_last_restart
+    - sensor.google_wifi_local_ip
+    - sensor.google_wifi_new_version
+    - sensor.google_wifi_status
+    - sensor.google_wifi_uptime
+    - sensor.cpu_load_total
+    - sensor.memory_usage_real
+    - sensor.network_down
+    - sensor.network_up
+    - sensor.status_sda
+    - sensor.status_sdb
+    - sensor.total_size_volume_1
+    - sensor.used_space_volume_1
+
+devices:
+  name: Devices
+  control: hidden
+  entities:
+    - device_tracker.10f1f24751b7
+    - device_tracker.404e368d9c94
+    - device_tracker.7c0191aa6db8
+    - device_tracker.80be0542d413
+    - device_tracker.68ab1ebd5dc4
+    - device_tracker.ching_pixel2xl
+    - device_tracker.yingsiphonelan
+    - device_tracker.elise_nmap
+    - device_tracker.gloria_nmap
+    - device_tracker.stan_nmap
+    - device_tracker.edward_nmap
+
+security_away:
+  name: Security devices armed when away
+  entities:
+    - binary_sensor.basement_bedroom_window
+    - binary_sensor.basement_door
+    - binary_sensor.basement_kitech_window
+    - binary_sensor.basement_lounge_left
+    - binary_sensor.basement_lounge_right
+    - binary_sensor.basement_motion
+    - binary_sensor.dining_motion
+    - binary_sensor.family_window_1
+    - binary_sensor.family_window_2
+    - binary_sensor.front_door
+    - binary_sensor.garage_door
+    - binary_sensor.garage_entry
+    - binary_sensor.garage_window
+    - binary_sensor.kitchen_window
+    - binary_sensor.nook_window_1
+    - binary_sensor.nook_window_2
+    - binary_sensor.office_motion
+
+
+
+
+
+
+
+
+
+
+
+
+

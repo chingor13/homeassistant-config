@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Entryway Switch"
+state_topic: "smartthings/Entryway/switch/state"
+command_topic: "smartthings/Entryway/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

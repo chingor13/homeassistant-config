@@ -1,0 +1,13 @@
+platform: manual_mqtt
+state_topic: home/alarm
+command_topic: home/alarm/set
+name: Home Alarm
+code: !secret alarm_code
+pending_time: 60
+delay_time: 20
+trigger_time: 4
+disarmed:
+  trigger_time: 0
+armed_home:
+  pending_time: 0
+  delay_time: 0

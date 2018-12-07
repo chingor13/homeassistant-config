@@ -1,0 +1,4 @@
+platform: mqtt
+name: Dining Humidity
+state_topic: "smartthings/Dining Room Multisensor/humidity/state"
+device_class: humidity

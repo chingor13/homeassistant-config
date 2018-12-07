@@ -1,0 +1,17 @@
+platform: template
+sensors: 
+  recycling_or_compost:
+    icon_template: >-
+      {% if is_state_attr('calendar.recyclecompost', 'message', 'Recycling') %}
+        mdi:recycle
+      {% elif is_state_attr('calendar.recyclecompost', 'message', 'Compost') %}
+        mdi:leaf
+      {% else %}
+        mdi:calendar-question
+      {% endif %}
+    value_template: "{{ state_attr('calendar.recyclecompost', 'message') }}"
+    friendly_name: 'Recycling or Compost'
+  next_garbage_day:
+    icon_template: 'mdi:calendar'
+    value_template: "{{ state_attr('calendar.recyclecompost', 'start_time')|timestamp_local }}"
+    friendly_name: 'Next Garbage Day'
