@@ -42,15 +42,26 @@
       data:
         message: "Alarm has been triggered!"
 
-# - id: rescan-when-alarm-pending
-#   alias: "Rescan local devices when alarm goes to pending"
-#   trigger:
-#     - platform: state
-#       entity_id: alarm_control_panel.home_alarm
-#       to: "pending"
-#   action:
-#     - service: script.turn_on
-#       entity_id: script.rescan_nmap
+- id: turn-on-night-mode
+  alias: "Enable Night Mode at Midnight"
+  trigger:
+    - platform: time
+      at: '00:00:00'
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.home_setting
+      data:
+        option: "Night Mode"
+- id: turn-off-night-mode
+  alias: "Disable Night Mode"
+  trigger:
+    - platform: time
+      at: '07:00:00'
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.home_setting
+      data:
+        option: "Home"
 
 - id: disarm-when-someone-returns
   alias: "Disarm the alarm when someone returns"
