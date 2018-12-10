@@ -1,6 +1,6 @@
-name: Leaving
+name: Away
 entities:
-  switch.dining_room_table_switch: on
+  switch.dining_room_table_switch: off
   switch.dining_room_switch: off
   switch.downstairs_landing: off
   switch.entryway_switch: off
