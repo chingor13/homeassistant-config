@@ -42,9 +42,6 @@ discovery:
   ignore:
     - harmony
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
-
 blink:
   username: !secret blink_username
   password: !secret blink_password
@@ -97,9 +94,6 @@ panel_iframe:
 # View all events in a logbook
 logbook:
 
-# Enables a map showing the location of tracked devices
-map:
-
 # Track the sun
 sun:
 
@@ -135,9 +129,6 @@ notify:
     gcm_api_key: !secret gcm_api_key
     gcm_sender_id: !secret gcm_sender_id
 
-# Cloud
-#cloud:
-
 google_domains:
   domain: home.chingr.com
   username: !secret google_domains_username
@@ -155,9 +146,9 @@ twilio:
   auth_token: !secret twilio_auth_token
 
 owntracks:
-    max_gps_accuracy: 200
-    waypoints: true
-    mqtt_topic: "owntracks/#"
+  max_gps_accuracy: 200
+  waypoints: true
+  mqtt_topic: "owntracks/#"
 
 weather: 
   - platform: darksky
@@ -170,7 +161,6 @@ weather:
 logger:
   default: info
   logs:
-    #homeassistant.components.device_tracker: debug
     locationsharinglib: debug
 
 influxdb:
