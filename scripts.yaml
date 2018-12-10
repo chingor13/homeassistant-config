@@ -1,0 +1,14 @@
+leaving:
+  sequence:
+    - service: scene.turn_on
+      data:
+        entity_id: scene.leaving
+    - delay:
+      minutes: 3
+    - service: scene.turn_on
+      data:
+        entity_id: scene.away
+    - service: alarm_control_panel.alarm_arm_away
+      data:
+        entity_id: alarm_control_panel.home_alarm
+        code: !secret alarm_code
