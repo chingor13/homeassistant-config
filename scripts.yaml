@@ -4,7 +4,7 @@ leaving:
       data:
         entity_id: scene.leaving
     - delay:
-      minutes: 3
+        minutes: 3
     - service: scene.turn_on
       data:
         entity_id: scene.away
