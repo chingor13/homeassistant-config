@@ -1,0 +1,8 @@
+# Z-Wave outlet
+platform: mqtt
+name: "Downstairs Landing"
+state_topic: "smartthings/Downstairs Landing/switch/state"
+command_topic: "smartthings/Downstairs Landing/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Cable Modem"
+state_topic: "smartthings/Cable Modem/switch/state"
+command_topic: "smartthings/Cable Modem/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false

@@ -1,0 +1,8 @@
+# Z-Wave Switch
+platform: mqtt
+name: "Game Closet Switch"
+state_topic: "smartthings/Game Closet/switch/state"
+command_topic: "smartthings/Game Closet/switch/cmd"
+payload_on: "on"
+payload_off: "off"
+retain: false
