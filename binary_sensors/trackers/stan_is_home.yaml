@@ -3,7 +3,7 @@ name: Stan
 prior: 0.4
 probability_threshold: 0.85
 observations:
-  - entity_id: 'device_tracker.stansiphonelan'
+  - entity_id: 'device_tracker.stan_nmap'
     prob_given_true: 0.99
     prob_given_false: 0.1
     platform: 'state'

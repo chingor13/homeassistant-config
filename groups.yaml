@@ -95,7 +95,7 @@ theater:
     - media_player.theater_speaker
     - remote.theater
     - binary_sensor.basement_bedroom_window
-  
+
 downstairs_living:
   name: Downstairs Living
   entities:
@@ -137,7 +137,7 @@ gift_room:
   entities:
     - media_player.gift_room_speaker
     - media_player.gift_room_speaker_2
-    
+
 titans_room:
   name: Titan's Room
   entities:
@@ -196,13 +196,10 @@ devices:
   name: Devices
   control: hidden
   entities:
-    - device_tracker.10f1f24751b7
-    - device_tracker.404e368d9c94
-    - device_tracker.7c0191aa6db8
-    - device_tracker.80be0542d413
-    - device_tracker.68ab1ebd5dc4
+    - device_tracker.jeff_nmap
+    - device_tracker.frankie_nmap
     - device_tracker.ching_pixel2xl
-    - device_tracker.yingsiphonelan
+    - device_tracker.manying_nmap
     - device_tracker.elise_nmap
     - device_tracker.gloria_nmap
     - device_tracker.stan_nmap
