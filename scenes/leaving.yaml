@@ -1,0 +1,12 @@
+name: Leaving
+entities:
+  - switch.dining_room_table_switch: on
+  - switch.dining_room_switch: on
+  - switch.entryway_switch: off
+  - switch.game_closet_switch: off
+  - switch.kitchen_island_switch: off
+  - switch.kitchen_light_switch: off
+  - switch.playroom_big_switch: off
+  - switch.playroom_small_switch: off
+  - switch.star_outlet: off
+  - switch.tree_outlet: off

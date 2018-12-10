@@ -1,6 +1,6 @@
 # Z-Wave Switch
 platform: mqtt
-name: "Playroom Room Big Switch"
+name: "Playroom Big Switch"
 state_topic: "smartthings/Playroom Room Big/switch/state"
 command_topic: "smartthings/Playroom Room Big/switch/cmd"
 payload_on: "on"

@@ -57,7 +57,7 @@ ifttt:
   key: !secret ifttt_key
 
 konnected: !include konnected.yaml
-          
+
 camera:
   - platform: mjpeg
     mjpeg_url: http://192.168.86.49/axis-cgi/mjpg/video.cgi
@@ -150,7 +150,7 @@ owntracks:
   waypoints: true
   mqtt_topic: "owntracks/#"
 
-weather: 
+weather:
   - platform: darksky
     api_key: !secret darksky_api_key
 
@@ -177,3 +177,4 @@ input_select: !include inputs.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+scene: !include_dir_list scenes
