@@ -116,6 +116,10 @@ views:
 resources:
   - url: /local/monster-card.js?v=1
     type: js
+  - url: /local/slider-entity-row.js?v=1
+    type: js
+  - url: /local/mini-media-player-bundle.js?v=0.9.5
+    type: module
 
 
 
