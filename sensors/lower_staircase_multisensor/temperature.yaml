@@ -1,0 +1,4 @@
+platform: mqtt
+name: Lower Staircase Temperature
+state_topic: "smartthings/Lower Staircase Multisensor/temperature/state"
+device_class: temperature

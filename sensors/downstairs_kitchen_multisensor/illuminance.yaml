@@ -1,0 +1,4 @@
+platform: mqtt
+name: Downstars Kitchen Illuminance
+state_topic: "smartthings/Downstars Kitchen Multisensor/illuminance/state"
+device_class: illuminance
