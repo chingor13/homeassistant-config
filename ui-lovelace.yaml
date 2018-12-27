@@ -1,5 +1,30 @@
 title: My Awesome Home
 views:
+  - title: Security
+    icon: mdi:security
+    cards:
+      - type: alarm-panel
+        entity: alarm_control_panel.home_alarm
+      - type: glance
+        entities:
+          - binary_sensor.garage_door
+          - binary_sensor.front_door
+          - binary_sensor.basement_door
+      - type: picture-glance
+        title: Living room
+        entities:
+          - switch.entryway_switch
+        camera_image: camera.motorola_mbp85connect
+      - type: picture-glance
+        title: Front Door
+        entities:
+          - switch.front_door_switch
+          - binary_sensor.front_door
+          - binary_sensor.front_door_camera_motion_detected
+          - binary_sensor.front_door_camera_online
+          - binary_sensor.front_door_camera_person_detected
+          - binary_sensor.front_door_camera_sound_detected
+        camera_image: camera.front_door
     # View tab title.
   - title: Home
     icon: mdi:home
@@ -20,19 +45,42 @@ views:
           type: glance
           show_name: false
           show_state: false
-      - type: alarm-panel
-        entity: alarm_control_panel.home_alarm
       - type: weather-forecast
         entity: weather.dark_sky
       - type: entities
         entities:
           - entity: sensor.recycling_or_compost
           - entity: sensor.next_garbage_day
+          - entity: sensor.fedex
+            name: Fedex
+          - entity: sensor.ups
+            name: UPS
   - title: Kitchen
     icon: mdi:food-fork-drink
     cards:
-      - type: glance
+      - type: picture-glance
         title: Kitchen
+        image: /local/kitchen.jpg
+        entities:
+          - switch.kitchen_island_switch
+          - switch.kitchen_light_switch
+          - media_player.kitchen
+          - media_player.kitchen_display
+
+      - type: custom:mini-media-player
+        entity: media_player.kitchen
+        artwork_border: true
+        show_source: true
+        show_tts: true
+
+      - type: custom:mini-media-player
+        entity: media_player.kitchen_display
+        artwork_border: true
+        show_source: true
+        show_tts: true
+
+      - type: entities
+        name: Kitchen
         entities:
           - binary_sensor.dining_motion
           - sensor.dining_temperature
@@ -66,29 +114,6 @@ views:
                 battery: '< 25'
             - attributes:
                 battery_level: '< 25'
-  - title: Security
-    icon: mdi:security
-    cards:
-      - type: glance
-        entities:
-          - binary_sensor.garage_door
-          - binary_sensor.front_door
-          - binary_sensor.basement_door
-      - type: picture-glance
-        title: Living room
-        entities:
-          - switch.entryway_switch
-        camera_image: camera.motorola_mbp85connect
-      - type: picture-glance
-        title: Front Door
-        entities:
-          - switch.front_door_switch
-          - binary_sensor.front_door
-          - binary_sensor.front_door_camera_motion_detected
-          - binary_sensor.front_door_camera_online
-          - binary_sensor.front_door_camera_person_detected
-          - binary_sensor.front_door_camera_sound_detected
-        camera_image: camera.front_door
   - title: Network
     icon: mdi:ip-network
     cards:

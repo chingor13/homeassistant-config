@@ -14,6 +14,7 @@ utilites:
 
 kitchen:
   name: Kitchen
+  control: hidden
   entities:
     - binary_sensor.kitchen_window
     - media_player.kitchen
@@ -177,6 +178,7 @@ presence:
 network:
   name: Network
   entities:
+    - sensor.google_ping
     - sensor.google_wifi_current_version
     - sensor.google_wifi_last_restart
     - sensor.google_wifi_local_ip
@@ -197,6 +199,7 @@ devices:
   control: hidden
   entities:
     - device_tracker.jeff_nmap
+    - device_tracker.diana_nmap
     - device_tracker.frankie_nmap
     - device_tracker.ching_pixel2xl
     - device_tracker.manying_nmap
@@ -226,11 +229,58 @@ security_away:
     - binary_sensor.nook_window_2
     - binary_sensor.office_motion
 
+living_motion:
+  entities:
+    - binary_sensor.dining_motion
+    - binary_sensor.family_motion
 
+security:
+  view: true
+  entities:
+    - alarm_control_panel.blink_sync
+    - binary_sensor.blink_backyard_camera_armed
+    - binary_sensor.blink_backyard_motion_detected
+    - binary_sensor.blink_basement_camera_armed
+    - binary_sensor.blink_basement_motion_detected
+    - binary_sensor.blink_garage_camera_armed
+    - binary_sensor.blink_garage_motion_detected
+    - camera.blink_backyard
+    - camera.blink_basement
+    - camera.blink_garage
+    - sensor.blink_backyard_battery
+    - sensor.blink_backyard_temperature
+    - sensor.blink_backyard_wifi_signal
+    - sensor.blink_basement_battery
+    - sensor.blink_basement_temperature
+    - sensor.blink_basement_wifi_signal
+    - sensor.blink_garage_battery
+    - sensor.blink_garage_temperature
+    - sensor.blink_garage_wifi_signal
+    - camera.entryway
+    - camera.front_door
+    - binary_sensor.front_door_camera_motion_detected
+    - binary_sensor.front_door_camera_online
+    - binary_sensor.front_door_camera_person_detected
+    - binary_sensor.front_door_camera_sound_detected
+    - binary_sensor.entryway_camera_motion_detected
+    - binary_sensor.entryway_camera_online
+    - binary_sensor.entryway_camera_person_detected
+    - binary_sensor.entryway_sound_detected
 
-
-
-
+nest:
+  entities:
+    - binary_sensor.ching_away
+    - camera.entryway
+    - camera.front_door
+    - binary_sensor.front_door_camera_motion_detected
+    - binary_sensor.front_door_camera_online
+    - binary_sensor.front_door_camera_person_detected
+    - binary_sensor.front_door_camera_sound_detected
+    - binary_sensor.entryway_camera_motion_detected
+    - binary_sensor.entryway_camera_online
+    - binary_sensor.entryway_camera_person_detected
+    - binary_sensor.entryway_sound_detected
+  
 
 
 
