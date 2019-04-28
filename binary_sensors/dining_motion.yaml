@@ -1,6 +1,0 @@
-platform: mqtt
-name: Dining Motion
-state_topic: "smartthings/Dining Room Multisensor/motion/state"
-payload_on: "active"
-payload_off: "inactive"
-device_class: "motion"

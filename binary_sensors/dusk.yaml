@@ -1,0 +1,5 @@
+platform: tod
+name: Dusk
+after: sunset
+after_offset: '-01:00'
+before: '00:00'

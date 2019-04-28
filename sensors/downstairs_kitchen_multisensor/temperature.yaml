@@ -1,4 +1,0 @@
-platform: mqtt
-name: Downstars Kitchen Temperature
-state_topic: "smartthings/Downstars Kitchen Multisensor/temperature/state"
-device_class: temperature

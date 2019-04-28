@@ -1,4 +1,0 @@
-platform: mqtt
-name: Downstars Kitchen Humidity
-state_topic: "smartthings/Downstars Kitchen Multisensor/humidity/state"
-device_class: humidity

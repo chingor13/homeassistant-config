@@ -1,4 +1,0 @@
-platform: mqtt
-name: Dining Temperature
-state_topic: "smartthings/Dining Room Multisensor/temperature/state"
-device_class: temperature

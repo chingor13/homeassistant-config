@@ -1,6 +1,0 @@
-platform: mqtt
-name: Downstairs Kitchen Motion
-state_topic: "smartthings/Downstairs Kitchen Multisensor/motion/state"
-payload_on: "active"
-payload_off: "inactive"
-device_class: "motion"

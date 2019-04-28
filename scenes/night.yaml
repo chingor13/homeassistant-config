@@ -1,4 +1,4 @@
-name: Away
+name: Night
 entities:
   switch.dining_room_table_switch: off
   switch.dining_room_switch: off
@@ -17,4 +17,4 @@ entities:
   switch.tree_outlet: off
   switch.upstairs_hallway: off
   input_select.home_setting:
-    option: Away Day
+    option: Night Mode

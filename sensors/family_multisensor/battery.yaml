@@ -1,4 +1,0 @@
-platform: mqtt
-name: Family Multisensor Battery
-state_topic: "smartthings/Family Multisensor/battery/state"
-device_class: battery

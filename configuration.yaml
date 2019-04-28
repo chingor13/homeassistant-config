@@ -39,8 +39,10 @@ updater:
 
 # Discover some devices automatically
 discovery:
-  ignore:
-    - harmony
+#   ignore:
+#     - harmony
+
+stream:
 
 blink:
   username: !secret blink_username
@@ -49,6 +51,13 @@ blink:
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
+
+google_assistant:
+  project_id: home-automation-chingr
+  api_key: !secret google_assistant_api_key
+  exposed_domains:
+    - switch
+    - light
 
 # Enables support for tracking state changes over time
 history:
@@ -63,6 +72,22 @@ camera:
     mjpeg_url: http://192.168.86.49/axis-cgi/mjpg/video.cgi
     still_image_url: http://192.168.86.49/cgi/jpg/image.cgi
     name: Motorola MBP85CONNECT
+  - platform: generic
+    name: luna
+    still_image_url: !secret wyze_cam_snapshot_luna
+    stream_source: !secret wyze_cam_rtsp_luna
+  - platform: generic
+    name: titan
+    still_image_url: !secret wyze_cam_snapshot_titan
+    stream_source: !secret wyze_cam_rtsp_titan
+  - platform: generic
+    name: basement
+    still_image_url: !secret wyze_cam_snapshot_basement
+    stream_source: !secret wyze_cam_rtsp_basement
+  - platform: generic
+    name: playroom
+    still_image_url: !secret wyze_cam_snapshot_playroom
+    stream_source: !secret wyze_cam_rtsp_playroom
 
 recorder:
   purge_keep_days: 5
@@ -77,20 +102,6 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: https://home.chingr.com:3218
-  mqtt:
-    title: MQTT
-    icon: mdi:code-brackets
-    url: https://home.chingr.com:5713
-  nodered:
-    title: Node-RED
-    icon: mdi:sitemap
-    url: https://home.chingr.com:1880
-
 # View all events in a logbook
 logbook:
 
@@ -104,11 +115,53 @@ binary_sensor: !include_dir_list binary_sensors
 sensor: !include_dir_list sensors
 
 # Switches
-switch: !include_dir_list switches
+#switch: !include_dir_list switches
+
+person:
+  - name: Jeff
+    id: jeff
+    user_id: 1763d5d8034e41f8aa54edb213c87e28
+    device_trackers:
+      - device_tracker.jeff_nmap
+      - device_tracker.ching_pixel2xl
+  - name: Diana
+    id: diana
+    device_trackers:
+      - device_tracker.diana_nmap
+  - name: Stan
+    id: stan
+    device_trackers:
+      - device_tracker.stan_nmap
+  - name: Elise
+    id: elise
+    device_trackers:
+      - device_tracker.elise_nmap
+  - name: Frankie
+    id: frankie
+    device_trackers:
+      - device_tracker.frankie_nmap
+  - name: ManYing
+    id: manying
+    device_trackers:
+      - device_tracker.manying_nmap
+  - name: Rachelle
+    id: rachelle
+    device_trackers:
+      - device_tracker.rachelle_nmap1
+      - device_tracker.racheele_nmap2
+  - name: Edward
+    id: edward
+    device_trackers:
+      - device_tracker.edward_nmap
+  - name: Gloria
+    id: gloria
+    device_trackers:
+      - device_tracker.gloria_nmap
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 # MQTT config
 mqtt:
@@ -126,8 +179,9 @@ notify:
     from_number: +12062020922
   - platform: html5
     name: Jeff's Phone
-    gcm_api_key: !secret gcm_api_key
-    gcm_sender_id: !secret gcm_sender_id
+    vapid_pub_key: !secret vapid_pub_key
+    vapid_prv_key: !secret vapid_prv_key
+    vapid_email: !secret vapid_email
 
 google_domains:
   domain: home.chingr.com
@@ -154,6 +208,8 @@ weather:
   - platform: darksky
     api_key: !secret darksky_api_key
 
+lovelace:
+  mode: yaml
 # usps:
 #   username: !secret usps_username
 #   password: !secret usps_password

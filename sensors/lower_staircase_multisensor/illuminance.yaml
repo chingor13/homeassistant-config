@@ -1,4 +1,0 @@
-platform: mqtt
-name: Lower Staircase Illuminance
-state_topic: "smartthings/Lower Staircase Multisensor/illuminance/state"
-device_class: illuminance

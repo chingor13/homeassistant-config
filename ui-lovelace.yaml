@@ -13,12 +13,12 @@ views:
       - type: picture-glance
         title: Living room
         entities:
-          - switch.entryway_switch
+          - switch.entryway
         camera_image: camera.motorola_mbp85connect
       - type: picture-glance
         title: Front Door
         entities:
-          - switch.front_door_switch
+          - switch.front_door_light
           - binary_sensor.front_door
           - binary_sensor.front_door_camera_motion_detected
           - binary_sensor.front_door_camera_online
@@ -62,8 +62,8 @@ views:
         title: Kitchen
         image: /local/kitchen.jpg
         entities:
-          - switch.kitchen_island_switch
-          - switch.kitchen_light_switch
+          - switch.kitchen_island
+          - switch.kitchen_light
           - media_player.kitchen
           - media_player.kitchen_display
 
@@ -82,16 +82,16 @@ views:
       - type: entities
         name: Kitchen
         entities:
-          - binary_sensor.dining_motion
-          - sensor.dining_temperature
-          - sensor.dining_humidity
-          - sensor.dining_illuminance
-          - sensor.dining_multisensor_battery
-          - binary_sensor.family_motion
-          - sensor.family_temperature
-          - sensor.family_humidity
-          - sensor.family_illuminance
-          - sensor.family_multisensor_battery
+          - binary_sensor.dining_room_multisensor_motion
+          - sensor.dining_room_multisensor_temperature_measurement
+          - sensor.dining_room_multisensor_relative_humidity_measurement
+          - sensor.dining_room_multisensor_illuminance
+          - sensor.dining_room_multisensor_battery
+          - binary_sensor.family_multisensor_motion
+          - sensor.family_multisensor_temperature_measurement
+          - sensor.family_multisensor_relative_humidity_measurement
+          - sensor.family_multisensor_illuminance
+          - sensor.family_multisensor_battery_2
       - type: custom:monster-card
         card:
           type: entities
@@ -119,6 +119,7 @@ views:
     cards:
       - type: entities
         title: WiFi
+        show_header_toggle: false
         entities:
           - sensor.google_wifi_current_version
           - sensor.google_wifi_last_restart
@@ -128,6 +129,7 @@ views:
           - sensor.google_wifi_uptime
       - type: entities
         title: Synology
+        show_header_toggle: false
         entities:
           - sensor.cpu_load_total
           - sensor.memory_usage_real
@@ -143,7 +145,7 @@ resources:
     type: js
   - url: /local/slider-entity-row.js?v=1
     type: js
-  - url: /local/mini-media-player-bundle.js?v=0.9.5
+  - url: /local/mini-media-player-bundle.js?v=1.0.4
     type: module
 
 

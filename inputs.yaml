@@ -52,12 +52,32 @@ home_setting:
     - Away Day
     - Night Mode
 
+basement_motion_recently:
+  options:
+    - No Motion
+    - Recent Motion
+
 dining_motion_recently:
   options:
     - No Motion
     - Recent Motion
 
+downstairs_kitchen_motion_recently:
+  options:
+    - No Motion
+    - Recent Motion
+
 family_motion_recently:
+  options:
+    - No Motion
+    - Recent Motion
+
+lower_motion_recently:
+  options:
+    - No Motion
+    - Recent Motion
+
+office_motion_recently:
   options:
     - No Motion
     - Recent Motion
@@ -72,7 +92,33 @@ downstairs_motion_recently:
     - No Motion
     - Recent Motion
 
+basement_door_recently:
+  options:
+    - Closed
+    - Recently Opened
+
+front_door_recently:
+  options:
+    - Closed
+    - Recently Opened
+
+garage_door_recently:
+  options:
+    - Closed
+    - Recently Opened
+
 garage_entry_recently:
   options:
     - Closed
     - Recently Opened
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,0 @@
-platform: mqtt
-name: Lower Staircase Humidity
-state_topic: "smartthings/Lower Staircase Multisensor/humidity/state"
-device_class: humidity

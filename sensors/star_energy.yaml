@@ -1,3 +1,0 @@
-platform: mqtt
-name: Star Energy
-state_topic: "smartthings/Star/energy/state"

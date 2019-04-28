@@ -1,4 +1,0 @@
-platform: mqtt
-name: Family Illuminance
-state_topic: "smartthings/Family Multisensor/illuminance/state"
-device_class: illuminance

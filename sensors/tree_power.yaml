@@ -1,3 +1,0 @@
-platform: mqtt
-name: Tree Power
-state_topic: "smartthings/Tree/power/state"

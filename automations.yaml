@@ -42,26 +42,26 @@
       data:
         message: "Alarm has been triggered!"
 
-- id: turn-on-night-mode
-  alias: "Enable Night Mode at Midnight"
-  trigger:
-    - platform: time
-      at: '00:00:00'
-  action:
-    - service: input_select.select_option
-      entity_id: input_select.home_setting
-      data:
-        option: "Night Mode"
-- id: turn-off-night-mode
-  alias: "Disable Night Mode"
-  trigger:
-    - platform: time
-      at: '07:00:00'
-  action:
-    - service: input_select.select_option
-      entity_id: input_select.home_setting
-      data:
-        option: "Home"
+# - id: turn-on-night-mode
+#   alias: "Enable Night Mode at Midnight"
+#   trigger:
+#     - platform: time
+#       at: '00:00:00'
+#   action:
+#     - service: input_select.select_option
+#       entity_id: input_select.home_setting
+#       data:
+#         option: "Night Mode"
+# - id: turn-off-night-mode
+#   alias: "Disable Night Mode"
+#   trigger:
+#     - platform: time
+#       at: '07:00:00'
+#   action:
+#     - service: input_select.select_option
+#       entity_id: input_select.home_setting
+#       data:
+#         option: "Home"
 
 - id: disarm-when-someone-returns
   alias: "Disarm the alarm when someone returns"
@@ -223,32 +223,42 @@
       data:
         code: !secret alarm_code
 
-- id: garage-entry-opened
-  alias: When garage entry opened
+- id: start-luna-bedtime
+  alias: Trigger Luna's bedtime
   trigger:
     - platform: state
-      entity_id: binary_sensor.garage_entry
+      entity_id: binary_sensor.luna_sleep
       to: "on"
   action:
-    - service: input_select.select_option
-      entity_id: input_select.garage_entry_recently
-      data:
-        option: "Recently Opened"
+    - service: scene.turn_on
+      entity_id: scene.luna_bedtime
 
-- id: garage-entry-closed
-  alias: When garage entry closed
+- id: end-luna-bedtime
+  alias: Luna's wake up
   trigger:
     - platform: state
-      entity_id: binary_sensor.garage_entry
+      entity_id: binary_sensor.luna_sleep
       to: "off"
-      for:
-        minutes: 1
   action:
-    - service: input_select.select_option
-      entity_id: input_select.garage_entry_recently
-      data:
-        option: "Closed"
+    - service: scene.turn_on
+      entity_id: scene.luna_wakeup
 
+- id: start-titan-bedtime
+  alias: Trigger Titan's bedtime
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.titan_sleep
+      to: "on"
+  action:
+    - service: scene.turn_on
+      entity_id: scene.titan_bedtime
 
-
-
+- id: end-titan-bedtime
+  alias: Titan's wake up
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.titan_sleep
+      to: "off"
+  action:
+    - service: scene.turn_on
+      entity_id: scene.titan_wakeup

@@ -1,4 +1,0 @@
-platform: mqtt
-name: Downstars Kitchen Multisensor Battery
-state_topic: "smartthings/Downstars Kitchen Multisensor/battery/state"
-device_class: battery
