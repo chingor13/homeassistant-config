@@ -163,6 +163,14 @@ tts:
   - platform: google_translate
     service_name: google_say
 
+panel_iframe:
+  zwave2mqtt:
+    title: Z-Wave to MQTT
+    icon: mdi:z-wave
+    url: https://home.chingr.com:8091
+
+system_health:
+
 # MQTT config
 mqtt:
   broker: 192.168.86.61
