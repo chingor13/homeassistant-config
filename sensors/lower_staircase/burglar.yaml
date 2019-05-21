@@ -1,0 +1,4 @@
+platform: mqtt
+name: Lower Staircase Multisensor Burglar
+state_topic: zwave-mqtt/21/113/1/10
+value_template: "{{ value_json.value }}"

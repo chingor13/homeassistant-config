@@ -1,0 +1,5 @@
+platform: mqtt
+name: Family Room Multisensor Battery
+state_topic: zwave-mqtt/20/128/1/0
+value_template: "{{ value_json.value }}"
+unit_of_measurement: '%'

@@ -1,0 +1,5 @@
+platform: mqtt
+name: Family Room Multisensor Illuminance
+state_topic: zwave-mqtt/20/49/1/3
+value_template: "{{ value_json.value }}"
+unit_of_measurement: 'lux'

@@ -1,0 +1,4 @@
+platform: mqtt
+name: Dining Room Multisensor Burglar
+state_topic: zwave-mqtt/6/113/1/10
+value_template: "{{ value_json.value }}"

@@ -1,0 +1,4 @@
+platform: tod
+name: Luna Awake
+after: '08:00'
+before: '19:30'

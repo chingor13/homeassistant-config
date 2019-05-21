@@ -1,0 +1,17 @@
+platform: template
+sensors:
+  family_room_multisensor_motion:
+    device_class: motion
+    friendly_name: Family Room Multisensor Motion
+    value_template: >-
+      {{ is_state('sensor.family_room_multisensor_burglar', '8') }}
+  dining_room_multisensor_motion:
+    device_class: motion
+    friendly_name: Dining Room Multisensor Motion
+    value_template: >-
+      {{ is_state('sensor.dining_room_multisensor_burglar', '8') }}
+  lower_staircase_multisensor_motion:
+    device_class: motion
+    friendly_name: Lower Staircase Multisensor Motion
+    value_template: >-
+      {{ is_state('sensor.lower_staircase_multisensor_burglar', '8') }}

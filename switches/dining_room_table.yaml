@@ -1,8 +1,11 @@
 # Z-Wave 
 platform: mqtt
-name: "Dining Room Table Switch"
-state_topic: "smartthings/Dining Room Table/switch/state"
-command_topic: "smartthings/Dining Room Table/switch/cmd"
-payload_on: "on"
-payload_off: "off"
+name: Dining Room Table
+state_topic: "zwave-mqtt/13/37/1/0"
+command_topic: "zwave-mqtt/13/37/1/0/set"
+payload_on: "true"
+payload_off: "false"
+state_on: true
+state_off: false
 retain: false
+value_template: "{{ value_json.value }}"

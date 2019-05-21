@@ -16,7 +16,7 @@
     offset: "-00:45:00"
   action:
     service: switch.turn_on
-    entity_id: switch.front_door_light
+    entity_id: switch.front_door
 
 - id: midnight-lights-off
   alias: "Turn off outdoor lights at midnight"
@@ -25,7 +25,7 @@
     at: '00:00:00'
   action:
     service: switch.turn_off
-    entity_id: switch.front_door_light
+    entity_id: switch.front_door
 
 - id: alarm-triggered-notifications
   alias: "Send notifications when alarm triggered"
@@ -41,6 +41,28 @@
     - service: notify.jeffs_phone
       data:
         message: "Alarm has been triggered!"
+
+- id: restart_modem_if_no_internet
+  alias: "Restart cable modem if no internet"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.google_ping
+      to: "off"
+      for:
+        minutes: 5
+  action:
+    - service: script.turn_on
+      entity_id: script.reset_modem
+
+
+- id: restart_if_missing_tuya
+  alias: "Restart Home Assistant if Tuya component failed to load"
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: script.turn_on
+      entity_id: script.restart_if_missing_tuya
 
 # - id: turn-on-night-mode
 #   alias: "Enable Night Mode at Midnight"
@@ -227,8 +249,8 @@
   alias: Trigger Luna's bedtime
   trigger:
     - platform: state
-      entity_id: binary_sensor.luna_sleep
-      to: "on"
+      entity_id: binary_sensor.luna_awake
+      to: "off"
   action:
     - service: scene.turn_on
       entity_id: scene.luna_bedtime
@@ -237,8 +259,8 @@
   alias: Luna's wake up
   trigger:
     - platform: state
-      entity_id: binary_sensor.luna_sleep
-      to: "off"
+      entity_id: binary_sensor.luna_awake
+      to: "on"
   action:
     - service: scene.turn_on
       entity_id: scene.luna_wakeup
@@ -247,8 +269,8 @@
   alias: Trigger Titan's bedtime
   trigger:
     - platform: state
-      entity_id: binary_sensor.titan_sleep
-      to: "on"
+      entity_id: binary_sensor.titan_awake
+      to: "off"
   action:
     - service: scene.turn_on
       entity_id: scene.titan_bedtime
@@ -257,8 +279,8 @@
   alias: Titan's wake up
   trigger:
     - platform: state
-      entity_id: binary_sensor.titan_sleep
-      to: "off"
+      entity_id: binary_sensor.titan_awake
+      to: "on"
   action:
     - service: scene.turn_on
       entity_id: scene.titan_wakeup

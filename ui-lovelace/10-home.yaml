@@ -1,0 +1,29 @@
+title: Home
+icon: mdi:home
+cards:
+  - type: entity-filter
+    entities:
+      - binary_sensor.jeff
+      - binary_sensor.diana
+      - binary_sensor.frankie
+      - binary_sensor.manying
+      - binary_sensor.stan
+      - binary_sensor.elise
+    state_filter:
+      - "on"
+    show_empty: false
+    card:
+      title: Who's Home?
+      type: glance
+      show_name: false
+      show_state: false
+  - type: weather-forecast
+    entity: weather.dark_sky
+  - type: entities
+    entities:
+      - entity: sensor.recycling_or_compost
+      - entity: sensor.next_garbage_day
+      - entity: sensor.fedex
+        name: Fedex
+      - entity: sensor.ups
+        name: UPS

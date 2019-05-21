@@ -1,0 +1,5 @@
+platform: mqtt
+name: Dining Room Multisensor Temperature
+state_topic: zwave-mqtt/6/49/1/1
+value_template: "{{ value_json.value }}"
+unit_of_measurement: '°'

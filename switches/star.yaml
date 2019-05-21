@@ -1,8 +1,11 @@
 # Z-Wave outlet
 platform: mqtt
-name: "Star Outlet"
-state_topic: "smartthings/Star/switch/state"
-command_topic: "smartthings/Star/switch/cmd"
-payload_on: "on"
-payload_off: "off"
+name: Star
+state_topic: "zwave-mqtt/7/37/1/0"
+command_topic: "zwave-mqtt/7/37/1/0/set"
+payload_on: "true"
+payload_off: "false"
+state_on: true
+state_off: false
 retain: false
+value_template: "{{ value_json.value }}"

@@ -97,6 +97,9 @@ remote:
   - platform: harmony
     name: Theater
     host: 192.168.86.29
+  - platform: harmony
+    name: Family
+    host: 192.168.86.62
 
 nest:
   client_id: !secret nest_client_id
@@ -115,7 +118,7 @@ binary_sensor: !include_dir_list binary_sensors
 sensor: !include_dir_list sensors
 
 # Switches
-#switch: !include_dir_list switches
+switch: !include_dir_list switches
 
 person:
   - name: Jeff
@@ -124,10 +127,12 @@ person:
     device_trackers:
       - device_tracker.jeff_nmap
       - device_tracker.ching_pixel2xl
+      - device_tracker.google_maps_105757887008230863406
   - name: Diana
     id: diana
     device_trackers:
       - device_tracker.diana_nmap
+      - device_tracker.google_maps_107542157987161696946
   - name: Stan
     id: stan
     device_trackers:
@@ -140,6 +145,7 @@ person:
     id: frankie
     device_trackers:
       - device_tracker.frankie_nmap
+      - device_tracker.google_maps_112898197095373594153
   - name: ManYing
     id: manying
     device_trackers:
@@ -178,8 +184,6 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
   client_id: ha
-  discovery: true
-  discovery_prefix: smartthings
 
 notify:
   - platform: twilio_sms

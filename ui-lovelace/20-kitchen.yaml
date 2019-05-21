@@ -1,0 +1,59 @@
+title: Kitchen
+icon: mdi:food-fork-drink
+cards:
+  - type: picture-glance
+    title: Kitchen
+    image: /local/kitchen.jpg
+    entities:
+      - switch.kitchen_island
+      - switch.kitchen
+      - media_player.kitchen
+      - media_player.kitchen_display
+
+  - type: custom:mini-media-player
+    entity: media_player.kitchen
+    artwork_border: true
+    show_source: true
+    show_tts: true
+
+  - type: custom:mini-media-player
+    entity: media_player.kitchen_display
+    artwork_border: true
+    show_source: true
+    show_tts: true
+
+  - type: entities
+    name: Kitchen
+    entities:
+      - binary_sensor.dining_room_multisensor_motion
+      - sensor.dining_room_multisensor_temperature
+      - sensor.dining_room_multisensor_humidity
+      - sensor.dining_room_multisensor_illuminance
+      - sensor.dining_room_multisensor_battery
+      - binary_sensor.family_room_multisensor_motion
+      - sensor.family_room_multisensor_temperature
+      - sensor.family_room_multisensor_humidity
+      - sensor.family_room_multisensor_illuminance
+      - sensor.family_room_multisensor_battery
+  - type: custom:monster-card
+    card:
+      type: entities
+      title: Things that are broken
+    filter:
+      include:
+        - state: "unknown"
+      exclude:
+        - entity_id: group.*
+  - type: custom:monster-card
+    show_empty: false
+    card:
+      type: glance
+      title: Low Battery Devices
+    filter:
+      include:
+        - entity_id: "*battery_level*"
+          state: '< 25'
+        - attributes:
+            battery: '< 25'
+        - attributes:
+            battery_level: '< 25'

@@ -1,8 +1,11 @@
 # Z-Wave Switch
 platform: mqtt
-name: "Entryway Switch"
-state_topic: "smartthings/Entryway/switch/state"
-command_topic: "smartthings/Entryway/switch/cmd"
-payload_on: "on"
-payload_off: "off"
+name: Entryway
+state_topic: "zwave-mqtt/14/37/1/0"
+command_topic: "zwave-mqtt/14/37/1/0/set"
+payload_on: "true"
+payload_off: "false"
+state_on: true
+state_off: false
 retain: false
+value_template: "{{ value_json.value }}"

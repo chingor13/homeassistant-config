@@ -12,3 +12,37 @@ leaving:
       data:
         entity_id: alarm_control_panel.home_alarm
         code: !secret alarm_code
+
+reset_modem:
+  sequence:
+    - condition: state
+      entity_id: binary_sensor.google_ping
+      state: "off"
+    - service: switch.turn_off
+      data:
+        entity_id: switch.cable_modem
+    - delay:
+        seconds: 10
+    - service: switch.turn_on
+      data:
+        entity_id: switch.cable_modem
+    - delay:
+        minutes: 2
+    - service: notify.twilio_sms
+      data:
+        message: "Home Assistant reset the modem"
+        target:
+          - "+12069026667"
+
+restart_if_missing_tuya:
+  sequence:
+    - delay:
+        minutes: 2
+    - condition: state
+      entity_id: switch.12000222c3ae8197c13_2
+      state: "unknown"
+    - service: notify.twilio_sms
+      data:
+        message: "Home Assistant missing Tuya component - restarting"
+        target:
+          - "+12069026667"

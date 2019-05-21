@@ -1,8 +1,8 @@
 # Z-Wave Switch
 platform: mqtt
-name: Sitting Room Big
-state_topic: "zwave-mqtt/10/37/1/0"
-command_topic: "zwave-mqtt/10/37/1/0/set"
+name: Front Door
+state_topic: "zwave-mqtt/26/37/1/0"
+command_topic: "zwave-mqtt/26/37/1/0/set"
 payload_on: "true"
 payload_off: "false"
 state_on: true

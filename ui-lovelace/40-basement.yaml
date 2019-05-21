@@ -1,0 +1,22 @@
+title: Basement
+icon: mdi:stairs
+cards:
+  - type: picture-glance
+    title: Living room
+    entities:
+      - binary_sensor.basement_door
+      - binary_sensor.basement_motion
+      - binary_sensor.basement_lounge_left
+      - binary_sensor.basement_lounge_right
+      - switch.lower_landing
+    camera_image: camera.basement
+  - type: custom:mini-media-player
+    entity: media_player.downstairs_living_room
+    artwork_border: true
+    show_source: true
+    show_tts: true
+  - type: custom:mini-media-player
+    entity: media_player.downstairs_living_room
+    artwork_border: true
+    show_source: true
+    show_tts: true

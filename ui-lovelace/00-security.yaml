@@ -1,0 +1,25 @@
+title: Security
+icon: mdi:security
+cards:
+  - type: alarm-panel
+    entity: alarm_control_panel.home_alarm
+  - type: glance
+    entities:
+      - binary_sensor.garage_door
+      - binary_sensor.front_door
+      - binary_sensor.basement_door
+  - type: picture-glance
+    title: Living room
+    entities:
+      - switch.entryway
+    camera_image: camera.motorola_mbp85connect
+  - type: picture-glance
+    title: Front Door
+    entities:
+      - switch.front_door
+      - binary_sensor.front_door
+      - binary_sensor.front_door_camera_motion_detected
+      - binary_sensor.front_door_camera_online
+      - binary_sensor.front_door_camera_person_detected
+      - binary_sensor.front_door_camera_sound_detected
+    camera_image: camera.front_door

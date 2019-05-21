@@ -1,8 +1,11 @@
 # Z-Wave Switch
 platform: mqtt
-name: "Cable Modem"
-state_topic: "smartthings/Cable Modem/switch/state"
-command_topic: "smartthings/Cable Modem/switch/cmd"
-payload_on: "on"
-payload_off: "off"
+name: Cable Modem
+state_topic: zwave-mqtt/5/37/1/0
+command_topic: zwave-mqtt/5/37/1/0/set
+payload_on: "true"
+payload_off: "false"
+state_on: true
+state_off: false
 retain: false
+value_template: "{{ value_json.value }}"

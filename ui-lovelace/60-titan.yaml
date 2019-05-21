@@ -1,0 +1,16 @@
+title: Titan
+icon: mdi:alpha-t-box-outline
+cards:
+  - type: entities
+    title: Titan
+    entities:
+      - switch.12000222c3ae8197c13_1
+      - switch.12000222c3ae8197c13_2
+      - switch.12000222c3ae8197c13_3
+      - switch.12000222c3ae8197c13_4
+      - switch.12000222c3ae8197c13_5
+  - type: picture-glance
+    title: Titan
+    entities:
+      - switch.12000222c3ae8197c13_2
+    camera_image: camera.titan

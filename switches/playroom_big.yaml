@@ -1,8 +1,11 @@
 # Z-Wave Switch
 platform: mqtt
-name: "Playroom Big Switch"
-state_topic: "smartthings/Playroom Room Big/switch/state"
-command_topic: "smartthings/Playroom Room Big/switch/cmd"
-payload_on: "on"
-payload_off: "off"
+name: Playroom Big
+state_topic: "zwave-mqtt/19/37/1/0"
+command_topic: "zwave-mqtt/19/37/1/0/set"
+payload_on: "true"
+payload_off: "false"
+state_on: true
+state_off: false
 retain: false
+value_template: "{{ value_json.value }}"

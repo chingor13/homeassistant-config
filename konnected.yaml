@@ -2,6 +2,8 @@ access_token: !secret konnected_access_token
 devices:
 # Konnected 1
 - id: bcddc2fe0fc6
+  host: 192.168.86.208
+  port: 24650
   binary_sensors:
     - pin: 1
       type: window
@@ -23,6 +25,8 @@ devices:
       name: Basement Bedroom Window
 # Konnected 2
 - id: bcddc2fdca92
+  host: 192.168.86.209
+  port: 24632
   binary_sensors:
     - pin: 1
       type: door
@@ -44,6 +48,8 @@ devices:
       name: Front Door
 # Konnected 3
 - id: bcddc2fda9a0
+  host: 192.168.86.210
+  port: 24624
   binary_sensors:
     - pin: 1
       type: window
