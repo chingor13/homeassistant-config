@@ -46,3 +46,6 @@ restart_if_missing_tuya:
         message: "Home Assistant missing Tuya component - restarting"
         target:
           - "+12069026667"
+    - delay:
+        seconds: 10
+    - service: homeassistant.restart
