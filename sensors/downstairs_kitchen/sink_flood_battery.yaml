@@ -1,0 +1,5 @@
+platform: mqtt
+name: Downstairs Kitchen Sink Flood Battery
+state_topic: zwave-mqtt/28/128/1/0
+value_template: "{{ value_json.value }}"
+unit_of_measurement: '%'

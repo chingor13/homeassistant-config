@@ -1,0 +1,4 @@
+platform: mqtt
+name: Stan Handicap Low Handicap Index
+state_topic: ghin/stan/low-handicap-index
+unit_of_measurement: strokes

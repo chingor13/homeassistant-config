@@ -165,16 +165,6 @@ upstairs:
     - group.titans_room
     - group.laundry_room
 
-presence:
-  name: Presence
-  entities:
-    - binary_sensor.diana
-    - binary_sensor.elise
-    - binary_sensor.frankie
-    - binary_sensor.jeff
-    - binary_sensor.manying
-    - binary_sensor.stan
-
 network:
   name: Network
   entities:

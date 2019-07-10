@@ -1,0 +1,7 @@
+platform: mqtt
+name: Downstairs Kitchen Sink Flood Water
+# state_topic: zwave-mqtt/28/113/1/8
+state_topic: zwave-mqtt/28/48/1/0
+value_template: "{{ value_json.value }}"
+payload_on: true
+payload_off: false

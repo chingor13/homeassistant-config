@@ -1,0 +1,3 @@
+platform: mqtt
+name: Jeff Handicap Effective Date
+state_topic: ghin/jeff/effective-date

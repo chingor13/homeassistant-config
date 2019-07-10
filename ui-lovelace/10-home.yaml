@@ -3,27 +3,67 @@ icon: mdi:home
 cards:
   - type: entity-filter
     entities:
-      - binary_sensor.jeff
-      - binary_sensor.diana
-      - binary_sensor.frankie
-      - binary_sensor.manying
-      - binary_sensor.stan
-      - binary_sensor.elise
+      - person.jeff
+      - person.diana
+      - person.frankie
+      - person.manying
+      - person.stan
+      - person.elise
+      - person.gloria
+      - person.rachelle
+      - person.edward
     state_filter:
-      - "on"
+      - "home"
     show_empty: false
     card:
       title: Who's Home?
       type: glance
       show_name: false
       show_state: false
+  - type: entity-filter
+    entities:
+      - person.jeff
+      - person.diana
+      - person.frankie
+      - person.manying
+      - person.stan
+      - person.elise
+      - person.gloria
+      - person.rachelle
+      - person.edward
+    state_filter:
+      - "not_home"
+      - "Popo"
+      - "Google Seattle"
+    card:
+      title: Who's Away?
+      type: entities
+      show_header_toggle: false
   - type: weather-forecast
     entity: weather.dark_sky
+  - type: map
+    entities:
+      - person.diana
+      - person.jeff
+      - person.frankie
+      - person.manying
   - type: entities
     entities:
       - entity: sensor.recycling_or_compost
       - entity: sensor.next_garbage_day
-      - entity: sensor.fedex
-        name: Fedex
+        format: relative
       - entity: sensor.ups
         name: UPS
+  - type: entities
+    title: Zestimates
+    show_header_toggle: false
+    entities:
+      - entity: sensor.zestimate_4816_s_170th_st
+        name: 4816
+      - entity: sensor.zestimate_2626_ne_135th_st
+        name: 2626
+      - entity: sensor.zestimate_323_s_150th_st
+        name: 323
+  - type: iframe
+    url: "https://embed.windy.com/embed2.html?lat=47.511&lon=-122.284&zoom=10&level=surface&overlay=wind&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=47.380&detailLon=-122.289&metricWind=default&metricTemp=%C2%B0F&radarRange=-1"
+    aspect_ratio: 100%

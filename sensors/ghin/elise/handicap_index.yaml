@@ -1,0 +1,4 @@
+platform: mqtt
+name: Elise Handicap Index
+state_topic: ghin/elise/handicap-index
+unit_of_measurement: strokes

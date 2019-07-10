@@ -1,29 +1,29 @@
-binary_sensor.jeff:
+person.jeff:
   friendly_name: Jeff
   device_class: presence
   entity_picture: https://home.chingr.com/local/jeff-min.jpg
 
-binary_sensor.diana:
+person.diana:
   friendly_name: Diana
   device_class: presence
   entity_picture: https://home.chingr.com/local/diana-min.jpg
 
-binary_sensor.frankie:
+person.frankie:
   friendly_name: Frankie
   device_class: presence
   entity_picture: https://home.chingr.com/local/frankie-min.jpg
 
-binary_sensor.manying:
+person.manying:
   friendly_name: ManYing
   device_class: presence
   entity_picture: https://home.chingr.com/local/manying-min.jpg
 
-binary_sensor.stan:
+person.stan:
   friendly_name: Stan
   device_class: presence
   entity_picture: https://home.chingr.com/local/stan-min.jpg
 
-binary_sensor.elise:
+person.elise:
   friendly_name: Elise
   device_class: presence
   entity_picture: https://home.chingr.com/local/elise-min.jpg

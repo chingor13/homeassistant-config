@@ -1,0 +1,4 @@
+platform: mqtt
+name: Jeff Handicap Index
+state_topic: ghin/jeff/handicap-index
+unit_of_measurement: strokes

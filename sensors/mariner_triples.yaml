@@ -1,0 +1,3 @@
+platform: mqtt
+name: Mariner Triples Yesterday
+state_topic: mlb/mariners/triples-yesterday

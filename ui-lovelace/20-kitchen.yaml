@@ -39,6 +39,7 @@ cards:
     card:
       type: entities
       title: Things that are broken
+      show_header_toggle: false
     filter:
       include:
         - state: "unknown"
@@ -57,3 +58,8 @@ cards:
             battery: '< 25'
         - attributes:
             battery_level: '< 25'
+  - type: entities
+    show_header_toggle: false
+    entities:
+      - binary_sensor.kitchen_sink_flood_water
+      - binary_sensor.downstairs_kitchen_sink_flood_water

@@ -9,6 +9,7 @@ cards:
       - switch.12000222c3ae8197c13_3
       - switch.12000222c3ae8197c13_4
       - switch.12000222c3ae8197c13_5
+    show_header_toggle: false
   - type: picture-glance
     title: Luna
     entities:

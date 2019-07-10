@@ -1,0 +1,4 @@
+platform: mqtt
+name: USPS Packages Today
+state_topic: usps/packages-today
+unit_of_measurement: packages

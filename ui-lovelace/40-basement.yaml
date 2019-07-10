@@ -10,6 +10,15 @@ cards:
       - binary_sensor.basement_lounge_right
       - switch.lower_landing
     camera_image: camera.basement
+  - type: entities
+    title: Staircase
+    show_header_toggle: false
+    entities:
+      - binary_sensor.lower_staircase_multisensor_motion
+      - sensor.lower_staircase_multisensor_temperature
+      - sensor.lower_staircase_multisensor_humidity
+      - sensor.lower_staircase_multisensor_illuminance
+      - sensor.lower_staircase_multisensor_battery
   - type: custom:mini-media-player
     entity: media_player.downstairs_living_room
     artwork_border: true

@@ -4,13 +4,12 @@ cards:
   - type: entities
     title: Titan
     entities:
-      - switch.12000222c3ae8197c13_1
-      - switch.12000222c3ae8197c13_2
-      - switch.12000222c3ae8197c13_3
-      - switch.12000222c3ae8197c13_4
-      - switch.12000222c3ae8197c13_5
+      - switch.dragonfly
+      - switch.firefly
+    show_header_toggle: false
   - type: picture-glance
     title: Titan
     entities:
-      - switch.12000222c3ae8197c13_2
+      - switch.dragonfly
+      - switch.firefly
     camera_image: camera.titan

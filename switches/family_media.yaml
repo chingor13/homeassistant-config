@@ -1,0 +1,50 @@
+platform: template
+switches:
+  # SHIELD TV Activity
+  shield_tv:
+    value_template: "{{ is_state_attr('remote.family', 'current_activity', 'SHIELD TV') }}"
+    turn_on:
+      service: remote.turn_on
+      data:
+        entity_id: remote.family
+        activity: 'SHIELD TV'
+    turn_off:
+      service: remote.turn_on
+      data:
+        entity_id: remote.family
+        activity: 'PowerOff'
+    icon_template: >-
+      {% if is_state_attr('remote.family', 'current_activity', 'SHIELD TV') %}
+        mdi:shield
+      {% else %}
+        mdi:shield-outline
+      {% endif %}
+  # PS3 Activity
+  ps3:
+    value_template: "{{ is_state_attr('remote.family', 'current_activity', 'Play PS3') }}"
+    turn_on:
+      service: remote.turn_on
+      data:
+        entity_id: remote.family
+        activity: 'Play PS3'
+    turn_off:
+      service: remote.turn_on
+      data:
+        entity_id: remote.family
+        activity: 'PowerOff'
+    icon_template: mdi:playstation
+  # Nintendo Switch Activity
+  nintendo_switch:
+    value_template: "{{ is_state_attr('remote.family', 'current_activity', 'Play Nintendo Switch') }}"
+    turn_on:
+      service: remote.turn_on
+      data:
+        entity_id: remote.family
+        activity: 'Play Nintendo Switch'
+    turn_off:
+      service: remote.turn_on
+      data:
+        entity_id: remote.family
+        activity: 'PowerOff'
+    icon_template: mdi:nintendo-switch
+  

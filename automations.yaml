@@ -54,6 +54,49 @@
     - service: script.turn_on
       entity_id: script.reset_modem
 
+- id: notify_if_water_leak
+  alias: "Notify if water is leaking"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_sink_flood_water
+      to: "on"
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "Kitchen sink is leaking!"
+        target:
+          - "+12069026667"
+
+- id: notify_if_water_leak_downstairs
+  alias: "Notify if water is leaking"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.downstairs_kitchen_sink_flood_water
+      to: "on"
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "Downstairs kitchen sink is leaking!"
+        target:
+          - "+12069026667"
+
+- id: notify_if_mariners_triple_yesterday
+  alias: "Notify if the mariners hit a triple yesterday"
+  trigger:
+    platform: time
+    at: '09:00:00'
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.mariner_triples_yesterday
+      above: 0
+      value_template: '{{ int(state.state) }}'
+  action: 
+    service_template: >
+      notify.twilio_sms
+    data_template:
+      message: "Mariners hit {% if is_state('sensor.mariner_triples_yesterday', '1') %}a triple{% else %}{{ states('sensor.mariner_triples_yesterday') }} triples{% endif %} yesterday! Go get Mexifries!"
+      target: 
+        - "+12069026667"
 
 - id: restart_if_missing_tuya
   alias: "Restart Home Assistant if Tuya component failed to load"
@@ -210,33 +253,33 @@
   alias: Arm home when some is home
   trigger:
     - platform: state
-      entity_id: binary_sensor.jeff
-      to: "on"
+      entity_id: person.jeff
+      to: "home"
       for:
         minutes: 10
     - platform: state
-      entity_id: binary_sensor.diana
-      to: "on"
+      entity_id: person.diana
+      to: "home"
       for:
         minutes: 10
     - platform: state
-      entity_id: binary_sensor.manying
-      to: "on"
+      entity_id: person.manying
+      to: "home"
       for:
         minutes: 10
     - platform: state
-      entity_id: binary_sensor.frankie
-      to: "on"
+      entity_id: person.frankie
+      to: "home"
       for:
         minutes: 10
     - platform: state
-      entity_id: binary_sensor.stan
-      to: "on"
+      entity_id: person.stan
+      to: "home"
       for:
         minutes: 10
     - platform: state
-      entity_id: binary_sensor.elise
-      to: "on"
+      entity_id: person.elise
+      to: "home"
       for:
         minutes: 10
   action:
@@ -284,3 +327,36 @@
   action:
     - service: scene.turn_on
       entity_id: scene.titan_wakeup
+
+- id: update-titan-cam-snapshot
+  alias: Every 5 minutes take titan cam snapshot
+  trigger:
+    platform: time_pattern
+    minutes: '/5'
+  action:
+    - service: camera.snapshot
+      entity_id: camera.titan
+      data:
+        filename: "/config/www/titan-cam-latest.jpg"
+
+- id: update-luna-cam-snapshot
+  alias: Every 5 minutes take luna cam snapshot
+  trigger:
+    platform: time_pattern
+    minutes: '/5'
+  action:
+    - service: camera.snapshot
+      entity_id: camera.luna
+      data:
+        filename: "/config/www/luna-cam-latest.jpg"
+
+- id: update-basement-cam-snapshot
+  alias: Every 5 minutes take basement cam snapshot
+  trigger:
+    platform: time_pattern
+    minutes: '/5'
+  action:
+    - service: camera.snapshot
+      entity_id: camera.basement
+      data:
+        filename: "/config/www/basement-cam-latest.jpg"

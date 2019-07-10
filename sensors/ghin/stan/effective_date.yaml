@@ -1,0 +1,3 @@
+platform: mqtt
+name: Stan Handicap Effective Date
+state_topic: ghin/stan/effective-date

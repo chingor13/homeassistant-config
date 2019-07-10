@@ -1,0 +1,4 @@
+platform: mqtt
+name: Elise Handicap Low Handicap Index
+state_topic: ghin/elise/low-handicap-index
+unit_of_measurement: strokes

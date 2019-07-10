@@ -1,0 +1,23 @@
+title: Golf
+icon: mdi:golf
+cards:
+  - type: entities
+    show_header_toggle: false
+    entities:
+      - sensor.jeff_handicap_effective_date
+      - sensor.jeff_handicap_index
+      - sensor.jeff_handicap_low_handicap_index
+      - sensor.stan_handicap_effective_date
+      - sensor.stan_handicap_index
+      - sensor.stan_handicap_low_handicap_index
+      - sensor.elise_handicap_effective_date
+      - sensor.elise_handicap_index
+      - sensor.elise_handicap_low_handicap_index
+  - type: custom:mini-graph-card
+    name: Jeff
+    icon: mdi:golf
+    entities:
+      - entity: sensor.jeff_handicap_index
+        name: INDEX 
+      - entity: sensor.jeff_handicap_low_handicap_index
+        name: LOW

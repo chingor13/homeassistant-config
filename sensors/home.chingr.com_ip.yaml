@@ -1,0 +1,4 @@
+platform: dnsip
+name: home.chingr.com IP Address
+hostname: home.chingr.com
+resolver: 8.8.8.8

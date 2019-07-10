@@ -1,0 +1,15 @@
+title: Health
+icon: mdi:hospital
+cards:
+  - type: entities
+    show_header_toggle: false
+    entities:
+      - sensor.cdc_level
+      - sensor.cdc_level_2
+      - sensor.avian_flu_symptoms
+      - sensor.dengue_fever_symptoms
+      - sensor.flu_like_symptoms
+      - sensor.flu_symptoms
+      - sensor.leptospirosis_symptoms
+      - sensor.no_symptoms
+      - sensor.total_symptoms

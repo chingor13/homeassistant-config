@@ -1,0 +1,9 @@
+platform: template
+sensors:
+  family_room_harmony_activity:
+    value_template: >
+      {% if is_state("remote.family", 'on') %}
+        {{ states.remote.family.attributes.current_activity }}
+      {% else %}
+        PowerOff
+      {% endif %}

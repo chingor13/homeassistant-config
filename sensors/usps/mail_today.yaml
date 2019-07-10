@@ -1,0 +1,4 @@
+platform: mqtt
+name: USPS Mail Today
+state_topic: usps/mail-today
+unit_of_measurement: mail pieces

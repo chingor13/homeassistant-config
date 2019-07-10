@@ -150,6 +150,7 @@ person:
     id: manying
     device_trackers:
       - device_tracker.manying_nmap
+      - device_tracker.google_maps_108670184868578997095
   - name: Rachelle
     id: rachelle
     device_trackers:
@@ -176,6 +177,10 @@ panel_iframe:
     url: https://home.chingr.com:8091
 
 system_health:
+
+system_log:
+  max_entries: 50
+  fire_event: true
 
 # MQTT config
 mqtt:

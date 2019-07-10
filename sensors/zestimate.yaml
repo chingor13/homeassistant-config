@@ -1,0 +1,6 @@
+platform: zestimate
+api_key: !secret zestimate_api_key
+zpid:
+  - 96676850
+  - 48991435
+  - 48754710

@@ -1,0 +1,16 @@
+platform: template
+sensors:
+  ping_min:
+    friendly_name: "Google Ping Min"
+    unit_of_measurement: 'ms'
+    value_template: "{{ state_attr('binary_sensor.google_ping', 'round_trip_time_min') }}"
+
+  ping_avg:
+    friendly_name: "Google Ping Average"
+    unit_of_measurement: 'ms'
+    value_template: "{{ state_attr('binary_sensor.google_ping', 'round_trip_time_avg') }}"
+
+  ping_max:
+    friendly_name: "Google Ping Max"
+    unit_of_measurement: 'ms'
+    value_template: "{{ state_attr('binary_sensor.google_ping', 'round_trip_time_max') }}"

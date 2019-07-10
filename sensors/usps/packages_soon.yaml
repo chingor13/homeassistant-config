@@ -1,0 +1,4 @@
+platform: mqtt
+name: USPS Packages Soon
+state_topic: usps/packages-soon
+unit_of_measurement: packages

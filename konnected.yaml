@@ -1,9 +1,11 @@
 access_token: !secret konnected_access_token
+api_host: http://192.168.86.61:8123
 devices:
 # Konnected 1
 - id: bcddc2fe0fc6
   host: 192.168.86.208
   port: 24650
+  discovery: false
   binary_sensors:
     - pin: 1
       type: window
@@ -27,6 +29,7 @@ devices:
 - id: bcddc2fdca92
   host: 192.168.86.209
   port: 24632
+  discovery: false
   binary_sensors:
     - pin: 1
       type: door
@@ -50,6 +53,7 @@ devices:
 - id: bcddc2fda9a0
   host: 192.168.86.210
   port: 24624
+  discovery: false
   binary_sensors:
     - pin: 1
       type: window

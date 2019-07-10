@@ -1,0 +1,18 @@
+icon: mdi:television
+title: Entertainment
+id: entertainment
+cards:
+  - type: vertical-stack
+    cards:
+      - type: picture-glance
+        title: Family TV
+        entities:
+          - switch.shield_tv
+          - switch.ps3
+          - switch.nintendo_switch
+        state_image:
+          "PowerOff": /local/off.jpg
+          "SHIELD TV": /local/nvidia-shield-logo.png
+          "Play PS3": /local/ps3-logo.jpg
+          "Play Nintendo Switch": /local/nintendo-switch-logo.jpg
+        entity: sensor.family_room_harmony_activity

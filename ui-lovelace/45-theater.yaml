@@ -1,0 +1,18 @@
+icon: mdi:projector
+title: Theater
+id: entertainment
+cards:
+  - type: vertical-stack
+    cards:
+      - type: picture-glance
+        title: Theater
+        entities:
+          - switch.xbox_one_s
+        state_image:
+          "PowerOff": /local/off.jpg
+          "Watch BluRay": /local/xbox_one_s
+        entity: sensor.theater_harmony_activity
+  - type: custom:mini-media-player
+    entity: media_player.theater_mini
+  - type: custom:mini-media-player
+    entity: media_player.theater_speaker
